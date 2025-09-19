@@ -4,9 +4,9 @@ ENV CATALINA_HOME /opt/tomcat
 ENV PATH $CATALINA_HOME/bin:$PATH
 
 RUN apt-get update && apt-get install -y curl tar && \
-    curl -L -O https://dlcdn.apache.org/tomcat/tomcat-9/v9.0.105/bin/apache-tomcat-9.0.105.tar.gz && \
+    curl -fSL https://archive.apache.org/dist/tomcat/tomcat-9/v9.0.105/bin/apache-tomcat-9.0.105.tar.gz -o apache-tomcat-9.0.105.tar.gz && \
     mkdir -p /opt/tomcat && \
-    tar xzvf apache-tomcat-9.0.105.tar.gz -C /opt/tomcat --strip-components=1 && \
+    tar xzf apache-tomcat-9.0.105.tar.gz -C /opt/tomcat --strip-components=1 && \
     rm apache-tomcat-9.0.105.tar.gz && \
     apt-get clean && rm -rf /var/lib/apt/lists/*
 
