@@ -13,7 +13,7 @@ COPY target/payment-webapp.war $CATALINA_HOME/webapps/
 
 EXPOSE 8080
 
-CMD ["catalina.sh", "run"]FROM openjdk:17-jdk-slim
+CMD ["catalina.sh", "run"]
 
 ENV CATALINA_HOME /opt/tomcat
 ENV PATH $CATALINA_HOME/bin:$PATH
